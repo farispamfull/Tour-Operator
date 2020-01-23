@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{%  extends 'main.html' %}
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>{{ tour.title }}</title>
+    {% endblock %}
+</head>
+<body>
+
+{% block card %}
+
+    <h1 class="display-3 mt-4" data-test="title">{{tour.title}} {{ tour.stars }} ★</h1>
+
+    <!-- HERO -->
+
+    <p class="lead" data-test="lead"><span data-test="country">{{ tour.country }}</span> из <span data-text="departure">{{ departures[tour.departure][3:] }}</span> <span data-text="nights">{{ tour.nights }}</span> ночей</p>
+
+    <img data-test="picture" class='w-75'src="{{ tour.picture}}">
+
+    <p class="my-4 w-75" data-test="description">{{ tour.description }}</p>
+
+    <a href="" class="btn btn-success btn-lg" data-test="buybutton">Купить тур за <span data-test="price">{{ tour.price }}</span></a>
+{% endblock %}
+</body>
+</html>
